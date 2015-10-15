@@ -2,6 +2,9 @@ body, html{
   height:100%;
 }
 body{
+  background-image: url('http://s.newsweek.com/sites/www.newsweek.com/files/2015/06/26/white-house-rainbow-3.jpg');
+  background-size: cover;
+  background-position: center;
   margin: 0px;
   background-color:#444;
   font-size: 18px;
@@ -23,5 +26,17 @@ body, a:link, a:visited, a:active{
 .dancer{
   border:10px solid red;
   border-radius:10px;
+  position:absolute;
+}
+.movingDancer{
+  border:10px solid yellow;
+  border-radius:10px;
+  position:absolute; 
+}
+.obama{
+  content: url('http://pngimg.com/upload/face_PNG5649.png');
+  content: url('http://www.clker.com/cliparts/e/5/d/9/1194984539216837021man02.svg.hi.png');
+  width:50px; 
+  height:50px;
   position:absolute;
 }
