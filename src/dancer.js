@@ -1,7 +1,13 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps, otherClass) {
   otherClass = otherClass || 'dancer';
-  this.$node = $('<span class="' + otherClass + '"></span>');
+  //this.$node = $('<span class = "people"><div class="figure"></div><div class="' + otherClass + '"></div></span>');
+  this.$node = $('<span class = "people"></span>');
+  this.$face = $('<div class = "' + otherClass + ' face"></div>');
+  this.$dancingBody = $('<div class = "figure"></div>');
+  this.$face.appendTo(this.$node);
+  this.$dancingBody.appendTo(this.$node);
+  console.dir(this.$node);
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
   this.left = left;

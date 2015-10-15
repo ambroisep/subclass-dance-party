@@ -1,9 +1,8 @@
 var makeMovingDancer = function(top, left, timeBetweenSteps, movingPace) {
   this.movingPace = movingPace;
   this.upOrDown = true;
-  var extraClass = "movingDancer";
+  var extraClass = "moving";
   makeDancer.call(this, top, left, timeBetweenSteps, extraClass);
-  //this.$node = $('<span class="movingDancer"></span>');
 }
 makeMovingDancer.prototype = Object.create(makeDancer.prototype);
 makeMovingDancer.prototype.constructor = makeMovingDancer;
