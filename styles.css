@@ -54,6 +54,10 @@ body, a:link, a:visited, a:active{
   left: -12px;
 }
 
+.bernie {
+  content: url('http://www.gilmerfreepress.net/images/upload1/BernieSanders.png');
+}
+
 /*people body*/
 .figure {
   content: url('/Users/student/Downloads/anonyman_t.jpeg');
