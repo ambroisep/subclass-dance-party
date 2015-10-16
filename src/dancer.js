@@ -3,7 +3,9 @@ var makeDancer = function(top, left, timeBetweenSteps, otherClass) {
   otherClass = otherClass || 'dancer';
   this.$node = $('<span class = "people"></span>');
   this.$face = $('<div class = "' + otherClass + ' face"></div>');
+  //this.$mouth = $('<div class = "mouth"></div>');
   this.$dancingBody = $('<div class = "figure"></div>');
+  //this.$mouth.appendTo(this.$node);
   this.$face.appendTo(this.$node);
   this.$dancingBody.appendTo(this.$node);
   this.timeBetweenSteps = timeBetweenSteps;

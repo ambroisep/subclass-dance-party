@@ -26,6 +26,15 @@ $(document).ready(function() {
     $(".dropDownDancerMenu").toggle();
   });
 
+  $(".addBearButton").on("click", function(event){
+    var $bear = $('<span class = "bear"></span>');
+    $('body').append($bear);
+    $bear.animate({left: '-270px'}, 10000, 'linear');
+    window.setTimeout(function(){$('.bear').remove()}, 10000);
+
+  });
+
+
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -73,5 +82,30 @@ $(document).ready(function() {
       currDancer.step();
     }
   });
+
+  $(".faceOffDancersButton").on("click", function(){
+    for(var i = window.dancers.length - 1; i >= 0; i--){
+      var currDancer = window.dancers[i];
+      var newTop = 600 + i * 20;
+      if(i < window.dancers.length/2){
+        console.log("left move");
+        var newLeft = 300 - i * 20;
+      } else {
+        console.log("right move");
+        newTop -= 20 * window.dancers.length/2
+        var newLeft = ($("body").width() - 500) + i * 20;
+      }
+      currDancer.$node.animate({left: newLeft, top: newTop}, 500);
+    }
+  });
 });
 
+  $(".debateButton").on("click", function(){
+
+  });
+
+  $(".people").on("click", function(event){
+    console.log(this);
+    var $explosion = $('<span class = "explosion"></span>');
+    $explosion.appendTo($("body"));
+  });

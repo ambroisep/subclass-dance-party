@@ -12,7 +12,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .button{
   padding:5px 12px;
   float:right;
 }
@@ -20,6 +20,7 @@ body, a:link, a:visited, a:active{
 .addDancerButton:hover {
   color: red;
 }
+
 
 .alignDancersButton {
   padding: 15px;
@@ -62,6 +63,16 @@ body, a:link, a:visited, a:active{
 /*people container*/
 .people{
   position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.mouth {
+  position: relative;
+  border:10px solid black;
+  border-radius:10px;
+  top: 200px
+  left:60px;
 }
 
 .face {
@@ -87,6 +98,10 @@ body, a:link, a:visited, a:active{
   top: 60px;
 }
 
+.explosion {
+  content: url('https://media0.giphy.com/media/dfmagEpntnE7S/200.gif');
+}
+
 .obama:hover {
   width: 200px;
   height: 200px;
@@ -104,6 +119,14 @@ body, a:link, a:visited, a:active{
   content: url('http://www.gilmerfreepress.net/images/upload1/BernieSanders.png');
   width : 60px;
   left : 5px;
+}
+
+.bear {
+  position: absolute;
+  content: url("http://38.media.tumblr.com/521addea3718052f81a5c36f18bb67fe/tumblr_ntbjuqHMo61uy3oaoo3_400.gif");
+  left: 500px;
+  top: 600px;
+  z-index: -50;
 }
 
 /*people body*/
