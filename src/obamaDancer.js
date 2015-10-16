@@ -1,6 +1,5 @@
 var makeObamaDancer = function(top, left, timeBetweenSteps, movingPace) {
   this.movingPace = movingPace;
-  this.upOrDown = true;
   var extraClass = 'obama';
   makeDancer.call(this, top, left, timeBetweenSteps, extraClass);  
 }
@@ -12,14 +11,6 @@ makeObamaDancer.prototype.step = function() {
   } else {
     this.rotate(this.$face, -20);
   }
-  this.upOrDown = !this.upOrDown;
-  
+  this.upOrDown = !this.upOrDown; 
   makeDancer.prototype.step.call(this);
 };
-
-makeObamaDancer.prototype.rotate = function($DOMelement, deg) {
-  var styleSettings = {
-    transform: 'rotate('+deg+'deg)'
-  };
-  $DOMelement.css(styleSettings);
-}

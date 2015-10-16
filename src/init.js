@@ -1,6 +1,31 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  $.fn.animateRotate = function(initialAngle, angle, duration, easing, complete) {
+    return this.each(function() {
+      var $elem = $(this);
+
+      $({deg: initialAngle}).animate({deg: angle}, {
+        duration: duration,
+        easing: easing,
+        step: function(now) {
+          $elem.css({
+             transform: 'rotate(' + now + 'deg)'
+           });
+        },
+        complete: complete || $.noop
+      });
+    });
+  };
+
+  $(".dropDownDancerMenu").mouseout(function(){
+    $(".dropDownDancerMenu").toggle();
+  });
+
+  $(".chooseDancerButton").on("click", function(event){
+    $(".dropDownDancerMenu").toggle();
+  });
+
   $(".addDancerButton").on("click", function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -27,7 +52,26 @@ $(document).ready(function() {
       Math.random() * 1000,
       Math.random() * 50
     );
+    dancers.push(dancer);
     $('body').append(dancer.$node);
+  });
+
+  $(".alignDancersButton").on("click", function(event) {
+    var alignClass = "align";
+    var newTop = $("body").height() - (200 + 150 * Math.random());
+    for (var i = 0; i < window.dancers.length; i++) {
+      var currDancer = window.dancers[i];
+      clearTimeout(currDancer.timeOutID);
+      var newLeft =  (i + 1) * ($("body").width() / (window.dancers.length + 2));
+      currDancer.$node.toggleClass(alignClass);
+      currDancer.step = makeObamaDancer.prototype.step;
+      currDancer.timeBetweenSteps = 500;
+      currDancer.top = newTop;
+      currDancer.left = newLeft;
+      currDancer.$node.animate({left: newLeft, top: newTop});      
+      currDancer.$node.css({transform: 'rotate(0deg)'});
+      currDancer.step();
+    }
   });
 });
 

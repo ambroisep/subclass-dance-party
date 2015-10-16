@@ -8,7 +8,7 @@ makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.orientation = (this.orientation + 90) % 360;
-  this.flip('Z', this.orientation);
+  this.flip('Z', this.orientation, this.cartWheelRight);
   if (this.cartWheelRight) {
     if ($("body").width() - this.left < 50) {
       this.cartWheelRight = false;
@@ -23,7 +23,8 @@ makeBlinkyDancer.prototype.step = function() {
   this.setPosition(this.top, this.left);
 };
 
-makeBlinkyDancer.prototype.flip = function(direction, deg){
+makeBlinkyDancer.prototype.flip = function(direction, deg, rotationDirectionRight){
+  if (!rotationDirectionRight) { deg = - deg; }
   var styles = {
     transform: 'rotate' + direction + '(' + deg + 'deg)'
   };

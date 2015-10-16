@@ -16,10 +16,45 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+
+.addDancerButton:hover {
+  color: red;
+}
+
+.alignDancersButton {
+  padding: 15px;
+  margin: 10px;
+}
+
 .topbar{
   height:32px;
   background-color: #555;
 }
+
+.dropDownDancerMenu {
+  height: 300px;
+  width: 200px;
+  background-color: black;
+  opacity: 0.6;
+  float: right;
+  padding-right: 20px;
+  margin-right: 100px;
+  display: none;
+}
+
+.chooseDancerButton {
+  float:right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.actionBar{
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  opacity: 0.6;
+}
+
 .title{
   background-color: #777;
 }
@@ -32,36 +67,49 @@ body, a:link, a:visited, a:active{
 .face {
   width:75px; 
   height:75px;
-  z-index: 1;
-  left: -10px;
-  top: 8px;
+  z-index: 101;
+  top: 48px;
   position:relative;
 }
 
 /*people faces*/
 .blinky{
   content: url('http://i.imgur.com/HRBWNDg.png');
+  left: 5px;
   /*border:10px solid red;
   border-radius:10px;*/
 }
 .moving{
   content: url('http://i.imgur.com/YQjnoH1.png');
-  left: -19px;
 }
 .obama{
   content: url('http://pngimg.com/upload/face_PNG5649.png');
-  top: 20px;
-  left: -12px;
+  top: 60px;
+}
+
+.obama:hover {
+  width: 200px;
+  height: 200px;
+  left: -65px;
+  top: 80px;
+}
+
+.trump {
+  content: url('files/trump.png');
+  width: 60px;
+  left: 8px;
 }
 
 .bernie {
   content: url('http://www.gilmerfreepress.net/images/upload1/BernieSanders.png');
+  width : 60px;
+  left : 5px;
 }
 
 /*people body*/
 .figure {
-  content: url('/Users/student/Downloads/anonyman_t.jpeg');
-  width:50px;
+  content: url('http://vignette3.wikia.nocookie.net/lego/images/8/8d/Joker-2.png/revision/latest?cb=20111208155943');
+  width:80px;
   position: relative;
-  z-index: 0;
+  z-index: 100;
 }
